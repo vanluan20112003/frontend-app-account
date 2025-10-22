@@ -11,9 +11,6 @@ import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Route, Routes, Outlet } from 'react-router-dom';
 
-import Header from '@edx/frontend-component-header';
-import { FooterSlot } from '@edx/frontend-component-footer';
-
 import configureStore from './data/configureStore';
 import AccountSettingsPage, { NotFoundPage } from './account-settings';
 import IdVerificationPageSlot from './plugin-slots/IdVerificationPageSlot';
@@ -31,11 +28,9 @@ subscribe(APP_READY, () => {
         <Routes>
           <Route element={(
             <div className="d-flex flex-column" style={{ minHeight: '100vh' }}>
-              <Header />
               <main className="flex-grow-1" id="main">
                 <Outlet />
               </main>
-              <FooterSlot />
             </div>
         )}
           >
